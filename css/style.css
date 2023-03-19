@@ -8,24 +8,6 @@ img {
     margin-right: auto;
 }
 
-.section-transparent img {
-    width: 80%;
-    border: 12px solid #003049;
-    padding: 20px;
-    margin: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.section img {
-    padding: 0px;
-    display: block;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .section {
     width: 100%;
     color: #fff;
@@ -34,20 +16,35 @@ img {
     padding-bottom: 5%;
 }
 
-.section-highlight {
-    background-color: rgba(126, 191, 241, 0.5); 
-    padding:5px;
-    
-}
 .highlight {
     color: #003049; 
     font-weight: bold;
 }
 
-.caption {
-    text-align: center;
+.section-highlight {
+    width: 100%;
+    background-color: rgba(126, 191, 241, 0.5); 
+    padding: 5px;  
 }
 
-.caption::before {
-    content: "Image: ";
-  }
+.section img {
+    width: 90%;
+    padding: 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-transparent img {
+    width: 80%;
+    padding: 20px;
+    margin: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-borders img {
+    border: 12px solid #003049;
+}
+
