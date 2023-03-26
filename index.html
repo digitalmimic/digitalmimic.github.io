@@ -50,6 +50,7 @@
     <ul class="menu">
       <li><a href="#about">About</a></li>
       <li><a href="#download">Download</a></li>
+      <li><a href="#results">Results</a></li>
       <li><a href="#press">Press</a></li>
       <li><a href="#people">People</a></li>
     </ul>
@@ -133,29 +134,81 @@
       </div>
     </div>
   </div>
-  <a id="press"></a>
-  <div class="container section-transparent image-borders image-links">
+  <a id="results"></a>
+  <div class="container">
     <div class="row">
-      <div class="twelve columns" style="text-align: center; margin-top: 10%">
-        <h4>Press</h4>
+      <div id="results-config" class="one-half column" style="margin-top:15%;">
+        <h4>Results</h4>
+        The buttons below can be used to view different outputs from our model.
+      </div>
+      <div class="one-half column" style="margin-top:8%;">
+        <img src="images/interventions.png" />
       </div>
     </div>
-    <div class="row" style="margin-bottom: 10%;">
-      <div class="one-half column">
-        <a href="https://news.sky.com/story/digital-mimics-among-16-projects-launched-to-help-nhs-with-winter-pressure-12791211"><img src="images/press/sky.png" /></a>
-        <a href="https://www.dailymail.co.uk/wires/pa/article-11662363/800-000-rapid-research-projects-help-tackle-NHS-winter-crisis-using-AI.html"><img src="images/press/mail.png" /></a>
-        <a href="https://www.bloomberg.com/news/articles/2023-01-22/uk-funds-big-data-projects-to-ease-winter-pressures-on-nhs"><img src="images/press/bloomberg-1.png" /></a>
+    <div class="row" style="margin-top:8%; text-align:left;">
+      <div class="three columns">
+        <select name="results-season" id="results-season">
+          <option selected="selected" disabled>Select season</option>
+          <option value="hMaxDistance">Winter</option>
+          <option value="hRandom">Non-Winter</option>
+        </select>
       </div>
-      <div class="one-half column">
-        <a href="https://www.independent.co.uk/news/health/nhs-steve-barclay-covid-b2266793.html"><img src="images/press/indepedent.png" /></a>
-        <a href="https://www.heraldscotland.com/news/23266845.winter-viruses-risk-predictor-could-ease-pressure-nhs/"><img src="images/press/herald.png" /></a>
-        <a href="https://www.walesonline.co.uk/news/uk-news/rapid-research-projects-awarded-800000-26040930.amp "><img src="images/press/wales.png" /></a>
-      </div>  
+      <div class="three columns">
+        <select name="results-group" id="results-group" disabled="true">
+          <option selected="selected" disabled>Select grouping</option>
+          <option value="sec">SEC</option>
+          <option value="eth">Ethnicity</option>
+        </select>
+        <div id="results-sec-container" style="display:none;">
+          Select members:
+          <label for="sec-lower">
+            <input type="checkbox" id="sec-lower" name="sec-lower" value="LowGas"> Low
+          </label>
+          <label for="sec-middle">
+            <input type="checkbox" id="sec-middle" name="sec-middle" value="MediumGas"> Middle
+          </label>
+          <label for="sec-higher">
+            <input type="checkbox" id="sec-higher" name="sec-higher" value="HighGas"> Higher
+          </label> 
+        </div>
+        <div id="results-eth-container" style="display:none;">
+          Select group:
+          <label for="eth-lower">
+            <input type="checkbox" id="eth-lower" name="eth-lower" value="LowerGas"> Ethnic Minority
+          </label>
+          <label for="eth-upper">
+            <input type="checkbox" id="eth-upper" name="eth-upper" value="UpperGas"> White British
+          </label>
+        </div>
+      </div>
+      <div class="three columns">
+        <div id="results-condition-container">
+          <select name="results-subgroup" id="results-subgroup" disabled="true">
+            <option selected="selected" disabled>Select condition</option>
+            <option value="respiratory">Respiratory</option>
+          </select>
+        </div>
+      </div>
+      <div class="three columns">
+        <div id="results-intervention-container">
+          <select name="results-intervention" id="results-intervention" disabled="true">
+            <option selected="selected" disabled>Select intervention</option>
+            <option value="none">No intervention</option>
+            <option value="advice">Advice</option>
+            <option value="payment">Payments</option>
+            <option value="vaccinations">Vaccinations</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="text-align:center; margin-bottom:8%; margin-top:5%;">
+      <div id="graph" class="twelve columns"></div>
+      <h6 id="results-context" style="display:none;">Our results are output from an abstract model, and require additional validation before being used in policy decisions.</h6>
     </div>
   </div>
+  <a id="people"></a>
   <div class="section">
     <div class="container">
-      <a id="people"></a>
       <div class="row">
         <div class="one-half column" style="margin-top:5%;">
           <h4>People</h4>
@@ -176,12 +229,24 @@
       </div>
     </div>
   </div>
-  <div class="container">
+  <a id="press"></a>
+  <div class="container section-transparent image-borders image-links">
     <div class="row">
-      <div class="one-half column" style="margin-top:8%;">
+      <div class="twelve columns" style="text-align: center; margin-top: 10%">
+        <h4>Press</h4>
+      </div>
+    </div>
+    <div class="row" style="margin-bottom: 10%;">
+      <div class="one-half column">
+        <a href="https://news.sky.com/story/digital-mimics-among-16-projects-launched-to-help-nhs-with-winter-pressure-12791211"><img src="images/press/sky.png" /></a>
+        <a href="https://www.dailymail.co.uk/wires/pa/article-11662363/800-000-rapid-research-projects-help-tackle-NHS-winter-crisis-using-AI.html"><img src="images/press/mail.png" /></a>
+        <a href="https://www.bloomberg.com/news/articles/2023-01-22/uk-funds-big-data-projects-to-ease-winter-pressures-on-nhs"><img src="images/press/bloomberg-1.png" /></a>
       </div>
       <div class="one-half column">
-      </div>
+        <a href="https://www.independent.co.uk/news/health/nhs-steve-barclay-covid-b2266793.html"><img src="images/press/indepedent.png" /></a>
+        <a href="https://www.heraldscotland.com/news/23266845.winter-viruses-risk-predictor-could-ease-pressure-nhs/"><img src="images/press/herald.png" /></a>
+        <a href="https://www.walesonline.co.uk/news/uk-news/rapid-research-projects-awarded-800000-26040930.amp "><img src="images/press/wales.png" /></a>
+      </div>  
     </div>
   </div>
   <div id="footer" class="section">
